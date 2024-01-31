@@ -1,0 +1,119 @@
+@media (min-width:600px) {
+    .container {
+        display: none;
+    }
+
+    div.container-desktop {
+        width: 92%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-columns: 1fr;
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "dsk2 dsk2 dsk2 dsk1 dsk1"
+            "dsk2 dsk2 dsk2 dsk1 dsk1"
+            "dsk2 dsk2 dsk2 dsk1 dsk1"
+            "dsk3 dsk3 dsk4 dsk4 mb1"
+            "dsk3 dsk3 dsk4 dsk4 mb1"
+            "dsk3 dsk3 dsk4 dsk4 mb1"
+            "mb3 dsk5 dsk5 dsk5 mb1"
+            "mb3 dsk5 dsk5 dsk5 mb1"
+            "mb3 dsk5 dsk5 dsk5 mb1"
+            "mb3 dsk5 dsk5 dsk5 mb2"
+            "mb3 dsk5 dsk5 dsk5 mb2"
+            "mb3 dsk5 dsk5 dsk5 mb2";
+
+        /* padding: 5%; */
+        height: 100vh;
+        /* background-color: red; */
+        position: relative;
+
+    }
+
+    .grid-item {
+        /* border: 1px solid black; */
+        border-radius: 12px;
+        cursor: pointer;
+        border-radius: 26px;
+        display: block;
+    }
+
+    .grid-item a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .dsk1 {
+        grid-area: dsk1;
+
+        background: url('../images/ip-tracker.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    .dsk2 {
+        grid-area: dsk2;
+        background: url('../images/easybank.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+
+    }
+
+    .mb2 {
+        grid-area: mb2;
+        background: url('../images/user-search-via-GitHub-API.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .mb1 {
+        grid-area: mb1;
+        background: url('../images/workit-mobile.jpg');
+        /* */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    .mb3 {
+        grid-area: mb3;
+        background: url('../images/interactive-cards.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    .dsk3 {
+        grid-area: dsk3;
+        background: url('../images/faq-card.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .dsk4 {
+        grid-area: dsk4;
+        background: url('../images/sunnyside-agency.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+    }
+
+    .dsk5 {
+        grid-area: dsk5;
+        background: url('../images/newsletter-sign-up-form-with-success-message-desktop.jpg');
+        /* */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        position: relative;
+    }
+}

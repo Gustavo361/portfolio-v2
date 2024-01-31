@@ -1,0 +1,53 @@
+header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    height: 78dvh;
+}
+
+header div#header-content {
+    padding-top: 4%;
+    margin-bottom: 0%;
+}
+
+header div#header-content h1 {
+    font-size: 32px;
+}
+
+header div#header-content span {
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+}
+
+header div#header-content button {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+header div#header-content button ion-icon {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+header div#header-content button a {
+    /* width: fit-content; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header div#header-content button:hover {
+    background-color: green;
+} */
+
+footer {
+    height: 18dvh;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    header div#header-content {
+        margin-bottom: 0;
+        padding-bottom: 2%;
+    }
+
+}
