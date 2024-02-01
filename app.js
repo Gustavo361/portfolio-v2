@@ -5,7 +5,6 @@ require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-// const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -33,8 +32,8 @@ app.post('/enviar-email', (req, res) => {
 
     const mailOptions = {
         from: {
-            name: userName, //funcionou!
-            address: userEmail //nao funciona
+            name: userName,
+            address: userEmail
         },
         to: [process.env.STANDARD_EMAIL],
         subject: "E-mail do Portfólio!",
@@ -50,7 +49,6 @@ app.post('/enviar-email', (req, res) => {
             console.error(error)
         }
     }
-
     sendMail(transporter, mailOptions)
 })
 
