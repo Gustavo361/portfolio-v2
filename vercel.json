@@ -1,10 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/enviar-email",
-      "destination": "/enviar-email"
-    },
-    {
       "source": "/agradecimento",
       "destination": "/public/thank-you.html"
     }
