@@ -41,14 +41,15 @@ app.post('/enviar-email', (req, res) => {
     }
 
     const sendMail = async (transporter, mailOptions) => {
-        try {
-            await transporter.sendMail(mailOptions)
-            console.log('email has been sent')
-            // res.redirect('/agradecimento');
-            res.sendFile(__dirname + '/public/thank-you.html');
-        } catch (error) {
-            console.error(error)
-        }
+        // try {
+        //     await transporter.sendMail(mailOptions)
+        //     console.log('email has been sent')
+        //     // res.redirect('/agradecimento');
+        //     res.sendFile(__dirname + '/public/thank-you.html');
+        // } catch (error) {
+        //     console.error(error)
+        // }
+        res.sendFile(__dirname + '/public/thank-you.html');
     }
     sendMail(transporter, mailOptions)
 })
