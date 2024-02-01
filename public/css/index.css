@@ -60,6 +60,11 @@ header nav div#logo-box span span#logo-dot {
     z-index: 98;
 }
 
+header nav div#logo-box span a sup {
+    color: white;
+    font-size: 12px;
+}
+
 header nav div#menu-open-close-btns {
     width: fit-content;
     display: flex;
