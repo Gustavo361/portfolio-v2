@@ -3,6 +3,10 @@
     {
       "source": "/agradecimento",
       "destination": "/public/thank-you.html"
+    },
+    {
+      "source": "/enviar-email",
+      "destination": "/public/thank-you.html"
     }
   ]
 }
