@@ -44,7 +44,8 @@ app.post('/enviar-email', (req, res) => {
         try {
             await transporter.sendMail(mailOptions)
             console.log('email has been sent')
-            res.redirect('/agradecimento');
+            // res.redirect('/agradecimento');
+            res.sendFile(__dirname + '/public/thank-you.html');
         } catch (error) {
             console.error(error)
         }
@@ -52,9 +53,9 @@ app.post('/enviar-email', (req, res) => {
     sendMail(transporter, mailOptions)
 })
 
-app.get('/agradecimento', (req, res) => {
-    res.sendFile(__dirname + '/public/thank-you.html');
-});
+// app.get('/agradecimento', (req, res) => {
+//     res.sendFile(__dirname + '/public/thank-you.html');
+// });
 
 app.get('/projects', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html#projects'));
