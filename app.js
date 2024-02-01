@@ -41,22 +41,20 @@ app.post('/enviar-email', (req, res) => {
     }
 
     const sendMail = async (transporter, mailOptions) => {
-        // try {
-        //     await transporter.sendMail(mailOptions)
-        //     console.log('email has been sent')
-        //     // res.redirect('/agradecimento');
-        //     res.sendFile(__dirname + '/public/thank-you.html');
-        // } catch (error) {
-        //     console.error(error)
-        // }
-        res.sendFile(__dirname + '/public/thank-you.html');
+        try {
+            await transporter.sendMail(mailOptions)
+            console.log('email has been sent')
+            res.redirect('/agradecimento');
+        } catch (error) {
+            console.error(error)
+        }
     }
     sendMail(transporter, mailOptions)
 })
 
-// app.get('/agradecimento', (req, res) => {
-//     res.sendFile(__dirname + '/public/thank-you.html');
-// });
+app.get('/agradecimento', (req, res) => {
+    res.sendFile(__dirname + '/public/thank-you.html');
+});
 
 app.get('/projects', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html#projects'));
