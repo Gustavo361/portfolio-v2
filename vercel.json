@@ -6,7 +6,7 @@
     },
     {
       "source": "/agradecimento",
-      "destination": "public/thank-you.html"
+      "destination": "/public/thank-you.html"
     }
   ]
 }

@@ -53,7 +53,7 @@ app.post('/enviar-email', (req, res) => {
 })
 
 app.get('/agradecimento', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public/thank-you.html'));
+    res.sendFile(__dirname + '/public/thank-you.html');
 });
 
 app.get('/projects', (req, res) => {
