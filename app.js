@@ -17,6 +17,18 @@ app.post('/enviar-email', (req, res) => {
     const userEmail = req.body.userEmail
     const userMessage = req.body.userMessage
 
+    if (!userName || userName.length < 2) {
+        return res.status(400).json({ success: false, error: 'O nome deve ter mais de 1 letra' });
+    }
+
+    if (!userEmail || !validateEmail(userEmail)) {
+        return res.status(400).json({ success: false, error: 'Por favor, insira um e-mail válido' });
+    }
+
+    if (!userMessage || userMessage.length < 5) {
+        return res.status(400).json({ success: false, error: 'A mensagem deve ter mais de 5 letras' });
+    }
+
     const transporter = nodemailer.createTransport({
         service: "gmail",
         host: "smtp.gmail.com",
@@ -45,11 +57,13 @@ app.post('/enviar-email', (req, res) => {
         try {
             await transporter.sendMail(mailOptions)
             console.log('email has been sent')
-            res.redirect('/agradecimento')
+            res.json({ success: true, redirectUrl: '/thank-you.html' })
         } catch (error) {
             console.error(error)
+            res.status(500).json({ success: false, error: 'Internal Server Error' })
         }
-    }
+    } 
+
     sendMail(transporter, mailOptions)
 })
 
