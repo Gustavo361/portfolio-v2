@@ -246,16 +246,23 @@
 
             <section id="contact">
                 <header id="contact-header"></header>
-                <form id="contactForm" action="https://portfolio-v2-server.onrender.com/enviar-email" method="POST">
+                <form id="contactForm">
                     <h2>Converse Comigo!</h2>
                     <label for="userName">Seu nome:</label>
-                    <input type="text" name="userName" id="userName" placeholder="Gustavo Faustino">
+                    <input type="text" name="userName" id="userName" placeholder="Gustavo Faustino" required>
+
                     <label for="userEmail">Seu e-mail:</label>
-                    <input type="email" name="userEmail" id="userEmail" placeholder="example@email.com">
+                    <input type="email" name="userEmail" id="userEmail" placeholder="example@email.com" required>
+
                     <label for="userMessage">Escreva sobre o que quiser:</label>
-                    <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="..."></textarea>
+                    <textarea name="userMessage" id="userMessage" cols="30" rows="10" placeholder="..."
+                        required></textarea>
+
                     <button type="submit">Contactar</button>
                 </form>
+
+                <span id="formResponse">Pode contar com uma resposta rápida</span>
+
                 <span>Pode contar com uma resposta rápida</span>
             </section>
 

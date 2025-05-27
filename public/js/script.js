@@ -34,26 +34,36 @@ dataMenuMobileContact.addEventListener('click', () => {
     closeMenuFullScreen()
 })
 
-// function validateForm() {
-//     var name = document.getElementById('name').value;
-//     var email = document.getElementById('email').value;
-//     var message = document.getElementById('message').value;
-    
-//     if (name.length < 2) {
-//         alert('Por favor, insira um nome válido.')
-//         return false;
-//     }
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
+  e.preventDefault()
 
-//     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (!emailRegex.test(email)) {
-//         alert('Por favor, insira um endereço de e-mail válido.')
-//         return false;
-//     }
+  const userName = document.getElementById('userName').value.trim()
+  const userEmail = document.getElementById('userEmail').value.trim()
+  const userMessage = document.getElementById('userMessage').value.trim()
+  const responseMessage = document.getElementById('formResponse')
 
-//     if (message.length < 5) {
-//         alert('Por favor, insira uma mensagem válida.')
-//         return false;
-//     }
+  const payload = { userName, userEmail, userMessage }
 
-//     return true
-// }
+  try {
+    const res = await fetch('https://portfolio-v2-server.onrender.com/enviar-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+
+    const result = await res.json()
+
+    if (res.ok && result.success) {
+      window.location.href = result.redirectUrl
+    } else {
+      responseMessage.textContent = result.error || 'Erro ao enviar o e-mail.'
+      responseMessage.style.color = 'red'
+    }
+  } catch (err) {
+    console.error('Erro ao enviar:', err)
+    responseMessage.textContent = 'Erro ao conectar com o servidor.'
+    responseMessage.style.color = 'red'
+  }
+})
